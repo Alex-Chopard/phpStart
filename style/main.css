@@ -1,0 +1,11 @@
+#usersTable {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+#usersTable th, td {
+    border: 1px solid black;
+    padding-rigth: 8px;
+    padding-left: 8px;
+}
