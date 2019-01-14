@@ -21,16 +21,12 @@ class UserController {
         }
 
         if ($stmt = Db::getInstance()->prepare("INSERT INTO user (firstName, lastName, email, address) values (?, ?, ?, ?);")) {
-            var_dump($stmt);
             $stmt->bind_param("ssss", $firstName, $lastName, $email, $address);
-            var_dump($stmt);
 
-            if ($query = $stmt->execute()) {
-                var_dump($query);
-
-                $query->close();
-            }
+            return !!($query = $stmt->execute());
         }
+
+        return false;
     }
 
     public static function search () {

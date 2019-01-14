@@ -4,10 +4,11 @@ include('./controller/UserController.php');
 include('./model/User.php');
 
 if (isset($_POST)) {
-    var_dump($_POST);
     if (isset($_POST['submit']) && $_POST['submit'] == 'Register') {
         if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) && isset($_POST['address'])) {
             UserController::create($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['address']);
+            header('Location: .');
+            exit();
         }
     }
 }
